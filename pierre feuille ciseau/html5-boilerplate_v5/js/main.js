@@ -2,40 +2,57 @@
 
 function pfs(){
 
-var user = prompt("Choisir entre pierre, feuille ou ciseaux");
-var nb = 1 + 3*Math.random();
-      nb = Math.floor(nb);
+
 var ordi;
 var resultat;
-
-//CHOIX ALÉATOIRE DE L'ORDI
-    if (nb == 1){
-      ordi = "pierre";
-    }
+var compteurU = 0;
+var compteurO = 0;
 
 
-    else if (nb == 2){
-      ordi = "feuille";
-    }
+while ((compteurU < 3) && (compteurO < 3)){
+
+//RANDOM CHOICE OF THE COMPUTER
+var nb = (Math.floor(1 + (3)*Math.random()));
+
+  if (nb == 1){
+    ordi = "pierre";
+  }
 
 
-    else if (nb == 3){
-      ordi = "ciseaux";
-    }
+  else if (nb == 2){
+    ordi = "feuille";
+  }
 
 
+  else if (nb == 3){
+    ordi = "ciseaux";
+  }
 
-//CHOIX DE L'UTISLISATEUR
+//CHOICE OF THE USER
+var user = prompt("Choisir entre pierre, feuille ou ciseaux");
+
+
 if (user == ordi){
   resultat = "égalite";
 }
 
-else if (user == "pierre" && ordi == "ciseaux" || user == "ciseaux" && ordi == "feuille" || user == "feuille" && ordi == "pierre")
+else if (user == "pierre" && ordi == "ciseaux" || user == "ciseaux" && ordi == "feuille" || user == "feuille" && ordi == "pierre"){
         resultat = "gagné";
+        compteurU += 1;
+}
 
-else if (ordi == "pierre" && user == "ciseaux" || ordi == "ciseaux" && user == "feuille" || ordi == "feuille" && user == "pierre")
+else {
         resultat = "perdu";
+        compteurO += 1;
+}
 
-        alert (resultat);
-        //console.log(ordi);
+        alert ("L'ordinateur a choisi "+ordi+" : "+resultat);
+        alert ("ORDINATEUR : "+compteurO+" VOUS : "+compteurU);
+}
+if (compteurO == 3){
+  alert("LOOSER!!!!!!!!!!!!!!!!!!!!!!!");
+}
+  else{
+    alert("YOU WIN");
+}
 }
