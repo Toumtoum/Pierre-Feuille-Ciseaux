@@ -9,26 +9,16 @@ var compteurU = 0;
 var compteurO = 0;
 
 
-while ((compteurU < 3) && (compteurO < 3)){
+while ((compteurU != 3) && (compteurO != 3)){
 
 //RANDOM CHOICE OF THE COMPUTER
-var nb = (Math.floor(1 + (3)*Math.random()));
 
-  if (nb == 1){
-    ordi = "pierre";
-  }
+var myArray = ["pierre", "feuille", "ciseaux"];
 
-
-  else if (nb == 2){
-    ordi = "feuille";
-  }
+var ordi = myArray[Math.floor(Math.random() * myArray.length)];
 
 
-  else if (nb == 3){
-    ordi = "ciseaux";
-  }
-
-//CHOICE OF THE USER
+//CHOICE USER
 var user = prompt("Choisir entre pierre, feuille ou ciseaux");
 
 
@@ -38,12 +28,12 @@ if (user == ordi){
 
 else if (user == "pierre" && ordi == "ciseaux" || user == "ciseaux" && ordi == "feuille" || user == "feuille" && ordi == "pierre"){
         resultat = "gagné";
-        compteurU += 1;
+        compteurU++;
 }
 
 else {
         resultat = "perdu";
-        compteurO += 1;
+        compteurO++;
 }
 
         alert ("L'ordinateur a choisi "+ordi+" : "+resultat);
