@@ -27,17 +27,20 @@ function ordiChoice(){
 myArray = ["pierre", "feuille", "ciseaux"];
 ordi = myArray[Math.floor(Math.random() * myArray.length)];
 
-  /*if (ordi = "pierre"){
+  if (ordi == "pierre"){
     document.getElementById("choix_ordi").src= "img/pierre.png";
+    //setTimeout(function(){ document.getElementById("choix_ordi").src = "";},3000);
     }
 
-  else if (ordi = "feuille"){
+  else if (ordi == "feuille"){
     document.getElementById("choix_ordi").src= "img/feuille.png";
+    //setTimeout(function(){ document.getElementById("choix_ordi").src = "";},3000);
     }
 
   else {
     document.getElementById("choix_ordi").src= "img/ciseaux.png";
-  }*/
+    //setTimeout(function(){ document.getElementById("choix_ordi").src = "";},3000);
+  }
   }
 
 //COMPARE CHOICES
@@ -91,9 +94,15 @@ function play(user){
 
   if (compteurO == 3){
     alert("LOOSER!!!!!!!!!!!!!!!!!!!!!!!");
+    compteurU = 0;
+    compteurO = 0;
     }
   if (compteurU == 3){
     alert("YOU WIN");
+    compteurU = 0;
+    compteurO = 0;
     }
 
+    document.getElementById("afficherCompteurU").innerHTML = "vous "+compteurU;
+    document.getElementById("afficherCompteurO").innerHTML = "ordinateur "+compteurO;
 }
