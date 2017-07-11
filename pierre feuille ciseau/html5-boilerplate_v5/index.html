@@ -7,23 +7,33 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
+
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/style.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+      <header>Pierre Feuille Ciseaux</header>
 
-        <!-- Add your site or application content here -->
+      <div class="joueur">
+        <form>
+            <input type="text" name="pseudo" value="PSEUDO"><br>
+            <button onclick="" class="jouer">Jouer</button>
+        </form>
+      </div>
 
-    <ul>
-        <li><a href="#" onclick="pfs();">Pierre Feuille Ciseaux</a></li>
-    </ul>
+        <div id="choix_du_joueur">
+          <img onclick="play('pierre')" src="img/pierre.png" alt="pierre" >
+          <img onclick="play('feuille')" src="img/feuille.png" alt="feuille" >
+          <img onclick="play('ciseaux')" src="img/ciseaux.png" alt="ciseaux">
+        </div>
+
+        <div><img id="choix_ordi" src="" alt=""></div>
+
+
+      <footer class="box"></footer>
 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>

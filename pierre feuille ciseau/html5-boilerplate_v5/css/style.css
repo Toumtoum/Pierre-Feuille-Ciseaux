@@ -1,0 +1,61 @@
+.box {
+  border: 1px red dotted;
+}
+
+
+header {
+  height: 70px;
+  color: #ACCAEB;
+	font-size: 50px;
+	text-align: center;
+	margin: 0 0 25px;
+	text-shadow: 1px 2px 0 #424242;
+  font-family: 'Lily Script One', cursive;
+  background-color: #eee;
+}
+
+
+div {
+  display: flex;
+  margin: 10px,2px,2px,2px;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2em 5em 2em;
+}
+
+.joueur{
+  justify-content: center;
+}
+
+.zone_de_jeu{
+  flex-direction: column;
+}
+
+button {
+  border: none;
+  color: #ACCAEB;;
+  background-color: #eee;
+  padding: 14px 28px;
+  cursor: pointer;
+  border-radius : 5px;
+  font-family: 'Lily Script One', cursive;
+  font-size: 20px;
+  text-shadow: 1px 2px 0 #424242;
+}
+
+button:hover {
+  background: #ddd;
+}
+
+img {
+    border-radius: 50%;
+    border : /*2px #ACCAEB*/1px red dotted;
+    }
+
+
+footer {
+  height: 70px;
+  color: #ACCAEB;
+	/*margin:  0 0 25px;
+  background-color: #eee;*/
+}

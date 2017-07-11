@@ -1,48 +1,99 @@
-// Pierre Feuille Ciseau
+//---------------VARIABLES--------------------------------------------
 
-function pfs(){
-
-
+var user;
 var ordi;
+var myArray;
 var resultat;
 var compteurU = 0;
 var compteurO = 0;
+var pseudo;
 
 
-while ((compteurU != 3) && (compteurO != 3)){
+//--------------FONCTIONS----------------------------------------------
 
-//RANDOM CHOICE OF THE COMPUTER
+//USER CHOICE
 
-var myArray = ["pierre", "feuille", "ciseaux"];
+/*function userChoice(img){
 
-var ordi = myArray[Math.floor(Math.random() * myArray.length)];
+  user = img.alt;
+  console.log(user);
 
+}*/
 
-//CHOICE USER
-var user = prompt("Choisir entre pierre, feuille ou ciseaux");
+//RANDOM CHOICE & DISPLAY ORDI CHOICE
 
+function ordiChoice(){
 
-if (user == ordi){
-  resultat = "égalite";
+myArray = ["pierre", "feuille", "ciseaux"];
+ordi = myArray[Math.floor(Math.random() * myArray.length)];
+
+  /*if (ordi = "pierre"){
+    document.getElementById("choix_ordi").src= "img/pierre.png";
+    }
+
+  else if (ordi = "feuille"){
+    document.getElementById("choix_ordi").src= "img/feuille.png";
+    }
+
+  else {
+    document.getElementById("choix_ordi").src= "img/ciseaux.png";
+  }*/
+  }
+
+//COMPARE CHOICES
+
+function compareChoices(user){
+
+  if (user == ordi){
+    //resultat = "égalite";
+  }
+
+  else if (user == "pierre" && ordi == "ciseaux" || user == "ciseaux" && ordi == "feuille" || user == "feuille" && ordi == "pierre"){
+    //resultat = "gagné";
+    compteurU++;
+
+  }
+
+  else {
+    //resultat = "perdu";
+    compteurO++;
+
+  }
 }
 
-else if (user == "pierre" && ordi == "ciseaux" || user == "ciseaux" && ordi == "feuille" || user == "feuille" && ordi == "pierre"){
-        resultat = "gagné";
-        compteurU++;
+//DISPLAY RESULT
+
+/*
+alert ("L'ordinateur a choisi "+ordi+" : "+resultat);
+alert ("ORDINATEUR : "+compteurO+" VOUS : "+compteurU);
 }
 
-else {
-        resultat = "perdu";
-        compteurO++;
-}
-
-        alert ("L'ordinateur a choisi "+ordi+" : "+resultat);
-        alert ("ORDINATEUR : "+compteurO+" VOUS : "+compteurU);
-}
 if (compteurO == 3){
   alert("LOOSER!!!!!!!!!!!!!!!!!!!!!!!");
 }
   else{
     alert("YOU WIN");
 }
+}
+}*/
+
+//------------------------SCRIPT-------------------------------------------
+
+
+function play(user){
+
+//  userChoice(img);
+  ordiChoice();
+  compareChoices(user);
+  console.log(ordi);
+  console.log("u :"+compteurU);
+  console.log("o :"+compteurO);
+
+  if (compteurO == 3){
+    alert("LOOSER!!!!!!!!!!!!!!!!!!!!!!!");
+    }
+  if (compteurU == 3){
+    alert("YOU WIN");
+    }
+
 }
